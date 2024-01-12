@@ -29,6 +29,23 @@ public class d1_practice2 {
             }
             System.out.println();
         }
+        public void delete(int data){
+            Node currunt = head;
+            Node previous = null;
+            while(currunt != null) {
+                if (currunt.data == data) {
+                    if (previous == null) {
+                        head = currunt.next;
+                    } else {
+                        previous.next = currunt.next;
+                    }
+
+                    break;
+                }
+                previous = currunt;
+                currunt = currunt.next;
+            }
+        }
     }
     public static void main(String[] args) {
 //        Node n1 = new Node(14);
@@ -38,6 +55,8 @@ public class d1_practice2 {
         ll.insert(24);
         ll.insert(35);
         ll.insert(26);
+        ll.traverse();
+        ll.delete(35);
         ll.traverse();
 
 
